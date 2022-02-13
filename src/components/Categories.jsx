@@ -1,7 +1,8 @@
 import React from 'react'
 
-function Categories({ items, onClick }) {
+const Categories = React.memo(function Categories({ items, onClickItem }) {
   const [activeItem, setActiveItem] = React.useState(0)
+
 
   return (
     <>
@@ -11,12 +12,13 @@ function Categories({ items, onClick }) {
             <li className={activeItem === i ? 'active' : ''}
               onClick={() => {
                 setActiveItem(i)
+                onClickItem(i)
               }} key={Math.random()}>{item}</li>
           )}
         </ul>
       </div>
     </>
   )
-}
+})
 
 export default Categories
