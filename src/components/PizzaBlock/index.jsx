@@ -8,6 +8,11 @@ function Pizzablock({ name, price, imageUrl, types, sizes }) {
   const [activeType, setAtiveType] = React.useState(types[0])
   const [activeSize, setAtiveSize] = React.useState(sizes[0])
 
+  // if (isLoading) {
+  //   return <LoadingBlock />
+  // }
+
+
 
   const onSelectType = (i) => {
     setAtiveType(i)
@@ -15,6 +20,7 @@ function Pizzablock({ name, price, imageUrl, types, sizes }) {
   const onSelectSize = (i) => {
     setAtiveSize(i)
   }
+
 
   return (
     <div className="pizza-block">
@@ -76,13 +82,13 @@ Pizzablock.propTypes = {
   imageUrl: PropTypes.string,
   price: PropTypes.number,
   types: PropTypes.arrayOf(PropTypes.number),
-  sizes: PropTypes.arrayOf(PropTypes.number)
+  sizes: PropTypes.arrayOf(PropTypes.number),
 }
 Pizzablock.defaultProps = {
   name: '---',
   price: 0,
   types: [],
-  sizes: []
+  sizes: [],
 }
 
 export default Pizzablock
